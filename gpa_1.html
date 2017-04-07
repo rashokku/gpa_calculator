@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+   <html>
+   <head>
+       <title>GPA Calculation </title>
+        <script type="text/javascript">
+           function display_3() {
+               document.getElementById("course1").style.display="block";
+			   document.getElementById("course1_cre").style.display="block";
+               document.getElementById("course2").style.display="block";
+			   document.getElementById("course2_cre").style.display="block";
+               document.getElementById("course3").style.display="block";
+			   document.getElementById("course3_cre").style.display="block";
+               document.getElementById("course4").style.display="none";
+			   document.getElementById("course4_cre").style.display="none";
+           }
+            
+           function display_4() {
+               document.getElementById("course1").style.display="block";
+			   document.getElementById("course1_cre").style.display="block";
+               document.getElementById("course2").style.display="block";
+			   document.getElementById("course2_cre").style.display="block";
+               document.getElementById("course3").style.display="block";
+			   document.getElementById("course3_cre").style.display="block";
+               document.getElementById("course4").style.display="block";
+			   document.getElementById("course4_cre").style.display="block";
+           }
+
+            function calculate_gpa() {
+                //access the first textbox
+                var course_1 = document.getElementById("course1");
+				//access the first textbox
+                var coursecre1 = document.getElementById("course1_cre");
+                //access the second textbox
+                var course_2 = document.getElementById("course2");
+				//access the second textbox
+                var coursecre2 = document.getElementById("course2_cre");
+                //access the third textbox
+                var course_3 = document.getElementById("course3");
+				//access the third textbox
+                var coursecre3 = document.getElementById("course3_cre");
+                //access the fourth textbox
+                var course_4 = document.getElementById("course4");
+				//access the fourth textbox
+                var coursecre4 = document.getElementById("course4_cre");
+                //access the result para
+                var resultParagraph = document.getElementById("result");  
+				
+				//Access the value within the textbox, convert it
+				//to float and assign it to the variable numOneValue
+				var numcourse1 = parseFloat(course_1.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it the variable numTwoValue
+				var numcoursecre1 = parseFloat(coursecre1.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it to the variable numOneValue
+				var numcourse2 = parseFloat(course_2.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it the variable numTwoValue
+				var numcoursecre2 = parseFloat(coursecre2.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it to the variable numOneValue
+				var numcourse3 = parseFloat(course_3.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it the variable numTwoValue
+				var numcoursecre3 = parseFloat(coursecre3.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it to the variable numOneValue
+				var numcourse4 = parseFloat(course_4.value);
+				//Access the value within the textbox, convert it
+				//to float and assign it the variable numTwoValue
+				var numcoursecre4 = parseFloat(coursecre4.value);
+
+                    if(document.getElementById('3_courses').checked){
+                    //Add the numbers and assign the result to total variable
+                    var total = [numcourse1 * numcoursecre1 + numcourse2 * numcoursecre2 + numcourse3 * numcoursecre3 ]/12;
+                    resultParagraph.innerHTML = total;
+                    }
+                    else if(document.getElementById('4_courses').checked) //Check if the second radiobutton was selected
+                    {
+                    //Subtract the numbers and assign the result to to tal vari able
+                    var total = [numcourse1 * numcoursecre1 + numcourse2 * numcoursecre2 + numcourse3 * numcoursecre3 + numcourse4 * numcoursecre4]/12;
+                    resultParagraph.innerHTML = total;
+                    }
+            } 
+
+       </script>
+   </head>
+   <body>
+       <br>
+       <h1>GPA CALCULATOR</h1>
+       <p>Number of courses</p>
+       <form method='post' action=''>
+           <input type="radio" id="3_courses" name="courses" value="3_courses" onClick="display_3()" /> 3<br>
+           <input type="radio" id="3_courses" name="courses" value="4_courses" onClick="display_4()" /> 4 <br> <br> <br>
+           <label>Course 1 grade</label>
+           <input type="text" id="course1" name="course1" style="display:none"/> <br> <br>
+		   <label>Course 1 credits </label>
+           <input type="text" id="course1_cre" name="course1_cre" style="display:none"/> <br> <br>
+           <label>Course 2 grade</label>
+           <input type="text" id="course2" name="course2" style="display:none"/><br> <br>
+		   <label>Course 2 credits </label>
+           <input type="text" id="course2_cre" name="course2_cre" style="display:none"/> <br> <br>
+           <label>Course 3 grade</label>
+           <input type="text" id="course3" name="course3" style="display:none"/><br> <br>
+		   <label>Course 3 credits </label>
+           <input type="text" id="course3_cre" name="course3_cre" style="display:none"/> <br> <br>
+           <label>Course 4 grade</label>
+           <input type="text" id="course4" name="course4" style="display:none"/><br> <br>
+		   <label>Course 4 credits</label>
+           <input type="text" id="course4_cre" name="course4_cre" style="display:none"/> <br> <br>
+           <input type="button" id="calculator" name="calculator" value="Calculate" onclick="calculate_gpa();" >
+           <p id="result"></p>
+       </form>
+   </body>
+</html>
