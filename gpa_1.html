@@ -71,15 +71,14 @@
 				var numcoursecre4 = parseFloat(coursecre4.value);
 
                     if(document.getElementById('3_courses').checked){
-                    //Add the numbers and assign the result to total variable
                     var total = [numcourse1 * numcoursecre1 + numcourse2 * numcoursecre2 + numcourse3 * numcoursecre3 ]/12;
-                    resultParagraph.innerHTML = total;
+                    total = total.toFixed(2);
+                    resultParagraph.innerHTML = "The Course 1 grade is " +numcourse1+ "<br>The course 1 credit is " +numcoursecre1+"<br>The Course 2 grade is "+numcourse2+"<br>The Course 2 credit is "+numcoursecre2+"<br>The Course 3 grade is "+numcourse3+"<br>The course 3 credit is "+numcoursecre3+"<br> So, the total gpa for the student is "+total;
                     }
-                    else if(document.getElementById('4_courses').checked) //Check if the second radiobutton was selected
-                    {
-                    //Subtract the numbers and assign the result to to tal vari able
-                    var total = [numcourse1 * numcoursecre1 + numcourse2 * numcoursecre2 + numcourse3 * numcoursecre3 + numcourse4 * numcoursecre4]/12;
-                    resultParagraph.innerHTML = total;
+                    else if(document.getElementById('4_courses').checked){
+                    var total = [ numcourse1 * numcoursecre1 + numcourse2 * numcoursecre2 + numcourse3 * numcoursecre3 + numcourse4 * numcoursecre4 ]/16;
+                    total = total.toFixed(2);
+                    resultParagraph.innerHTML = "The Course 1 grade is " +numcourse1+ "<br>The course 1 credit is " +numcoursecre1+"<br>The Course 2 grade is "+numcourse2+"<br>The Course 2 credit is "+numcoursecre2+"<br>The Course 3 grade is "+numcourse3+"<br>The course 3 credit is "+numcoursecre3+"<br>The Course 4 grade is "+numcourse4+ "<br>The Course 4 credit is "+numcoursecre4+  "<br> So, the total gpa for the student is "+total;
                     }
             } 
 
@@ -91,7 +90,7 @@
        <p>Number of courses</p>
        <form method='post' action=''>
            <input type="radio" id="3_courses" name="courses" value="3_courses" onClick="display_3()" /> 3<br>
-           <input type="radio" id="3_courses" name="courses" value="4_courses" onClick="display_4()" /> 4 <br> <br> <br>
+           <input type="radio" id="4_courses" name="courses" value="4_courses" onClick="display_4()" /> 4 <br> <br> <br>
            <label>Course 1 grade</label>
            <input type="text" id="course1" name="course1" style="display:none"/> <br> <br>
 		   <label>Course 1 credits </label>
