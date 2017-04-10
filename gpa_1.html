@@ -10,8 +10,18 @@
 			   document.getElementById("course2_cre").style.display="block";
                document.getElementById("course3").style.display="block";
 			   document.getElementById("course3_cre").style.display="block";
+               document.getElementById("cou1_1").style.display="block";
+               document.getElementById("cou1_2").style.display="block";
+               document.getElementById("cou2_1").style.display="block";
+               document.getElementById("cou2_2").style.display="block";
+               document.getElementById("cou3_1").style.display="block";
+               document.getElementById("cou3_2").style.display="block";
                document.getElementById("course4").style.display="none";
 			   document.getElementById("course4_cre").style.display="none";
+               document.getElementById("cou4_1").style.display="none";
+               document.getElementById("cou4_2").style.display="none";
+               
+               
            }
             
            function display_4() {
@@ -23,6 +33,14 @@
 			   document.getElementById("course3_cre").style.display="block";
                document.getElementById("course4").style.display="block";
 			   document.getElementById("course4_cre").style.display="block";
+               document.getElementById("cou1_1").style.display="block";
+               document.getElementById("cou1_2").style.display="block";
+               document.getElementById("cou2_1").style.display="block";
+               document.getElementById("cou2_2").style.display="block";
+               document.getElementById("cou3_1").style.display="block";
+               document.getElementById("cou3_2").style.display="block";
+               document.getElementById("cou4_1").style.display="block";
+               document.getElementById("cou4_2").style.display="block";
            }
 
             function calculate_gpa() {
@@ -91,21 +109,21 @@
        <form method='post' action=''>
            <input type="radio" id="3_courses" name="courses" value="3_courses" onClick="display_3()" /> 3<br>
            <input type="radio" id="4_courses" name="courses" value="4_courses" onClick="display_4()" /> 4 <br> <br> <br>
-           <label>Course 1 grade</label>
+           <label id="cou1_1" style="display:none">Course 1 grade</label>
            <input type="text" id="course1" name="course1" style="display:none"/> <br> <br>
-		   <label>Course 1 credits </label>
+		   <label id="cou1_2" style="display:none">Course 1 credits </label>
            <input type="text" id="course1_cre" name="course1_cre" style="display:none"/> <br> <br>
-           <label>Course 2 grade</label>
+           <label id="cou2_1" style="display:none">Course 2 grade</label>
            <input type="text" id="course2" name="course2" style="display:none"/><br> <br>
-		   <label>Course 2 credits </label>
+		   <label id="cou2_2" style="display:none">Course 2 credits </label>
            <input type="text" id="course2_cre" name="course2_cre" style="display:none"/> <br> <br>
-           <label>Course 3 grade</label>
+           <label id="cou3_1" style="display:none">Course 3 grade</label>
            <input type="text" id="course3" name="course3" style="display:none"/><br> <br>
-		   <label>Course 3 credits </label>
+		   <label id="cou3_2" style="display:none">Course 3 credits </label>
            <input type="text" id="course3_cre" name="course3_cre" style="display:none"/> <br> <br>
-           <label>Course 4 grade</label>
+           <label id="cou4_1" style="display:none">Course 4 grade</label>
            <input type="text" id="course4" name="course4" style="display:none"/><br> <br>
-		   <label>Course 4 credits</label>
+		   <label id="cou4_2" style="display:none">Course 4 credits</label>
            <input type="text" id="course4_cre" name="course4_cre" style="display:none"/> <br> <br>
            <input type="button" id="calculator" name="calculator" value="Calculate" onclick="calculate_gpa();" >
            <p id="result"></p>
